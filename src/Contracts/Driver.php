@@ -28,7 +28,7 @@ abstract class Driver
 
     public function message($message)
     {
-        if (! is_string($message)) {
+        if (!is_string($message)) {
             throw new \Exception('Message text should be a string.');
         }
         if (trim($message) == '') {
@@ -40,4 +40,6 @@ abstract class Driver
     }
 
     abstract public function send();
+
+    abstract public function verify(string $template, string $token1, ?string $token2 = null, ?string $token3 = null);
 }

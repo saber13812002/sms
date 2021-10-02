@@ -29,4 +29,17 @@ class Kavenegar extends Driver
 
         return (count($this->recipients) == 1) ? $response->first() : $response;
     }
+
+    public function verify(string $template, string $token1, string $token2 = null, string $token3 = null)
+    {
+        $response = collect();
+        foreach ($this->recipients as $recipient) {
+            $response->put(
+                $recipient,
+                $this->client->VerifyLookup($recipient, $template, $token1, $token2, $token3)
+            );
+        }
+
+        return (count($this->recipients) == 1) ? $response->first() : $response;
+    }
 }
