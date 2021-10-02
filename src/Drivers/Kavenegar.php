@@ -36,7 +36,7 @@ class Kavenegar extends Driver
         foreach ($this->recipients as $recipient) {
             $response->put(
                 $recipient,
-                $this->client->VerifyLookup($recipient, $template, $token1, $token2, $token3)
+                $this->client->VerifyLookup($recipient, $token1, $token2, $token3, $template)
             );
         }
 
