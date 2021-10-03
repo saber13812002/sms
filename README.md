@@ -24,7 +24,7 @@ List of supported gateways:
 - [SMS Gateway Me](https://smsgateway.me)
 - [Ghasedak](https://ghasedaksms.com/)
 - [Sms77](https://www.sms77.io)
-  
+
 - Others are under way.
 
 ## :package: Install
