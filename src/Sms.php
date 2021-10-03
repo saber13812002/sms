@@ -47,7 +47,7 @@ class Sms
         }
 
         $this->builder->send($message);
-        if (!$callback) {
+        if (! $callback) {
             return $this;
         }
 
@@ -100,8 +100,8 @@ class Sms
         $conditions = [
             'Driver not selected or default driver does not exist.' => empty($this->driver),
             'Driver not found in config file. Try updating the package.' => empty($this->config['drivers'][$this->driver]) || empty($this->config['map'][$this->driver]),
-            'Driver source not found. Please update the package.' => !class_exists($this->config['map'][$this->driver]),
-            'Driver must be an instance of Contracts\Driver.' => !(new ReflectionClass($this->config['map'][$this->driver]))->isSubclassOf(Driver::class),
+            'Driver source not found. Please update the package.' => ! class_exists($this->config['map'][$this->driver]),
+            'Driver must be an instance of Contracts\Driver.' => ! (new ReflectionClass($this->config['map'][$this->driver]))->isSubclassOf(Driver::class),
         ];
 
         foreach ($conditions as $ex => $condition) {

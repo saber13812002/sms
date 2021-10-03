@@ -28,7 +28,7 @@ abstract class Driver
 
     public function message($message)
     {
-        if (!is_string($message)) {
+        if (! is_string($message)) {
             throw new \Exception('Message text should be a string.');
         }
         if (trim($message) == '') {
